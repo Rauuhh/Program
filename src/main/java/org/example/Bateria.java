@@ -113,9 +113,9 @@ public class Bateria {
         String jamon = entrada.nextLine();
 
         if (tomate.toLowerCase().equals("si") && aceite.toLowerCase().equals("si") &&  jamon.toLowerCase().equals("si")){
-            System.out.println("!No tenemos que ir a comprar¡");
+            System.out.println("¡No tenemos que ir a comprar!");
         }else {
-            System.out.println("!Tenemos que ir a comprar¡");
+            System.out.println("¡Tenemos que ir a comprar!");
         }
          */
         /*
