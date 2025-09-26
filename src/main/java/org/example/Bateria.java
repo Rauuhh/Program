@@ -119,6 +119,7 @@ public class Bateria {
         }
          */
         /*
+       Ejercicio8
         System.out.println("Introduce el primer lado del triangulo");
         double lado1 = entrada.nextDouble();
         System.out.println("Introduce el segundo lado del triangulo");
