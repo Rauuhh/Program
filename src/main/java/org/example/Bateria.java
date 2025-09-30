@@ -1,27 +1,38 @@
 package org.example;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Bateria {
-    static void main(){
+    static void main() {
         Scanner entrada = new Scanner(System.in);
         /*
-       Ejercicio 1
+        float horas  =0;
+        float salario = 0;
+        float salariobruto = 0;
 
-        System.out.println("Numero de horas trabajadas");
-        int
-        float horas = entrada.nextInt();
-        System.out.println("Salario por Hora");
-        float salario = entrada.nextInt();
-        float salariobruto = salario * horas;
-        System.out.println("Tu salario bruto es de " +  salariobruto);
-        */
+        try {
+            System.out.println("Numero de horas trabajadas");
+             horas = entrada.nextInt();
+            System.out.println("Salario por Hora");
+             salario = entrada.nextInt();
+             salariobruto = salario * horas;
+        } catch (InputMismatchException e) {
+            System.out.println("Formato incorrecto");
+        }
+        System.out.println("Tu salario bruto es de " + salariobruto);
+         */
         /*
-        Ejercicio2
-        System.out.println("Numero de horas trabajadas");
-        double horas = entrada.nextDouble();
-        System.out.println("Salario por Hora");
-        double salario = entrada.nextDouble();
+         double horas = 0;
+         double salario = 0;
+        try {
+            System.out.println("Numero de horas trabajadas");
+            horas = entrada.nextDouble();
+            System.out.println("Salario por Hora");
+            salario = entrada.nextDouble();
+        } catch (InputMismatchException e){
+            System.out.println("Formato incorrecto");
+        }
         double salariobruto;
         if (horas > 40)
         {
@@ -34,9 +45,13 @@ public class Bateria {
         System.out.println("Tu salario bruto es de " +  salariobruto);
         */
         /*
-        Ejercicio3
+        double numero = 0;
         System.out.println("Introduce un numero");
-        double numero = entrada.nextDouble();
+        try{
+            numero = entrada.nextDouble();
+        }catch (InputMismatchException e){
+            System.out.println("Formato incorrecto");
+        }
         if (numero <0){
             System.out.println("El numero es negativo");
         } else if (numero > 0) {
@@ -44,15 +59,23 @@ public class Bateria {
         }else {
             System.out.println("Ni positivo ni negativo, es 0");
         }
+
+
          */
         /*
-       Ejercicio4
-        System.out.println("Introduce el primer numero");
-        double num1 = entrada.nextDouble();
-        System.out.println("Introduce el segundo numero");
-        double num2 = entrada.nextDouble();
-        System.out.println("Introduce el tercer numero");
-        double num3 = entrada.nextDouble();
+        double num1 = 0;
+        double num2 = 0;
+        double num3 = 0;
+        try {
+            System.out.println("Introduce el primer numero");
+            num1 = entrada.nextDouble();
+            System.out.println("Introduce el segundo numero");
+            num2 = entrada.nextDouble();
+            System.out.println("Introduce el tercer numero");
+            num3 = entrada.nextDouble();
+        }catch (InputMismatchException e ){
+            System.out.println("Formato incorrecto");
+        }
         if (num1 == num2 || num1 == num3 || num3 == num2){
             System.out.println("ERROR: hay numero que son iguales");
         }else
@@ -65,21 +88,35 @@ public class Bateria {
                 System.out.println(num3 + " es el numero mas pequeño");
             }
         }
-         */
-        /*
-       Ejercicio5
-        System.out.println("Introduce el dividendo");
-        double divid = entrada.nextDouble();
-        System.out.println("Introduce el divisor");
-        double divis = entrada.nextDouble();
+
+        */
+
+        double divid = 0;
+        double divis = 0;
+        double result = 0;
+
+        boolean estado = true;
+        do {
+            try {
+                System.out.println("Introduce el dividendo");
+                divid = entrada.nextDouble();
+                System.out.println("Introduce el divisor");
+                divis = entrada.nextDouble();
+                estado = false;
+            } catch (InputMismatchException e) {
+                System.out.println("Formato Incorrecto");
+            }
+            entrada.nextLine();
+        }while (estado);
         if (divis != 0){
-            double result = divid / divis;
+            result = divid / divis;
             System.out.println("El resultado es " + result);
         }else {
             System.out.println("No puedes dividir entre 0");
         }
-         */
+
         /*
+
        Ejercicio6
         System.out.println("CALCULAR AREA TRIANGULO");
         System.out.println("-----------------------");
