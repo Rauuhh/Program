@@ -21,13 +21,23 @@ public class Multiplicacion {
         int numero1 = 0;
         int numero2 = 0;
         boolean estado = true;
+        boolean cifras = false;
+        boolean negativo = false;
         do {
             try {
                 //bucle para que el numero tenga 3 cifras
                 do {
                     System.out.println("Introduce el multiplicando(3 cifras)");
                     numero1 = entrada.nextInt();
-                }while (numero1 > 999 || numero1 < 100);
+                    if (numero1 >= 100 && numero1 <= 999)
+                    {
+                        cifras = true;
+                    } else if (numero1 <= -100 && numero1 >= -999) {
+                        cifras = true;
+                    }else {
+                        cifras = false;
+                    }
+                }while (cifras == false);
                     estado = false;
             }catch (InputMismatchException e){
                 System.out.println("Formato no correcto, Vuelva a introducirlo...");
@@ -36,13 +46,24 @@ public class Multiplicacion {
         }while (estado);
         //pones la variable en true para volver a hacer otro try-catch con la misma variable
         estado = true;
+        cifras = false;
         do {
             try {
                 do {
                     //bucle para que el numero tenga 3 cifras
                     System.out.println("Introduce el multiplicador(3 cifras)");
                     numero2 = entrada.nextInt();
-                }while (numero2 > 999 || numero2 < 100);
+                    if (numero2 >= 100 && numero2 <= 999)
+                    {
+                        cifras = true;
+                    } else if (numero2 <= -100 && numero2 >= -999) {
+                        cifras = true;
+                        negativo = true;
+                    }else {
+                        cifras = false;
+                    }
+                }while (cifras == false);
+
                 estado = false;
             }catch (InputMismatchException e){
                 System.out.println("Formato no correcto, Vuelva a introducirlo...");
@@ -52,28 +73,55 @@ public class Multiplicacion {
         int resultado = numero1 * numero2;
 
         //pasas el numero de int a string
-        String numero_string = Integer.toString(numero2);
-        //coger el digito de cada posicion
-        String num1 = numero_string.substring(2,3);
-        String num2 = numero_string.substring(1,2);
-        String num3 = numero_string.substring(0,1);
-        //pasar esa posicion a un numero
-        int num1I = Integer.parseInt(num1);
-        int num2I = Integer.parseInt(num2);
-        int num3I = Integer.parseInt(num3);
+        if (negativo){
+            String numero_string = Integer.toString(numero2);
+            //coger el digito de cada posicion
+            String num1 = numero_string.substring(3, 4);
+            String num2 = numero_string.substring(2, 3);
+            String num3 = numero_string.substring(1, 2);
+            //pasar esa posicion a un numero
+            int num1I = Integer.parseInt(num1);
+            int num2I = Integer.parseInt(num2);
+            int num3I = Integer.parseInt(num3);
+            //el resultado
+            System.out.println();
+            System.out.println("El producto de la multiplicacion es " + resultado);
+            System.out.println("El proceso es:");
+            System.out.println("    " + (numero1));
+            System.out.println(" x " + numero2);
+            System.out.println("___________");
+            System.out.println();
+            System.out.println("  -" + (num1I * numero1));
+            System.out.println(" -" + (num2I * numero1) + "x");
+            System.out.println("-" + (num3I * numero1) + "xx");
+            System.out.println("___________");
+            System.out.println(" "+ resultado);
+        }
+        else {
+            String numero_string = Integer.toString(numero2);
+            //coger el digito de cada posicion
+            String num1 = numero_string.substring(2, 3);
+            String num2 = numero_string.substring(1, 2);
+            String num3 = numero_string.substring(0, 1);
+            //pasar esa posicion a un numero
+            int num1I = Integer.parseInt(num1);
+            int num2I = Integer.parseInt(num2);
+            int num3I = Integer.parseInt(num3);
+            //el resultado
+            System.out.println();
+            System.out.println("El producto de la multiplicacion es " + resultado);
+            System.out.println("El proceso es:");
+            System.out.println("    " + (numero1));
+            System.out.println("  x " + numero2);
+            System.out.println("___________");
+            System.out.println();
+            System.out.println("   " + (num1I * numero1));
+            System.out.println("  " + (num2I * numero1) + "x");
+            System.out.println(" " + (num3I * numero1) + "xx");
+            System.out.println("___________");
+            System.out.println(" "+ resultado);
+        }
 
-        //el resultado
-        System.out.println();
-        System.out.println("El producto de la multiplicacion es " + resultado);
-        System.out.println("El proceso es:");
-        System.out.println("    " + (numero1));
-        System.out.println("  x " + numero2);
-        System.out.println("___________");
-        System.out.println();
-        System.out.println("   " + (num1I * numero1));
-        System.out.println("  " + (num2I * numero1) + "x");
-        System.out.println(" " + (num3I * numero1) + "xx");
-        System.out.println("___________");
-        System.out.println(" "+ resultado);
+
     }
 }
