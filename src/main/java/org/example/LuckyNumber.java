@@ -10,6 +10,7 @@ public class LuckyNumber {
         String fecha = entrada.nextLine();
         String reemplazar;
         final int ANIO = 2025;
+        final int ANIO2 = 1900;
         final int MES = 12;
         final int DIA = 31;
         int dia = 0;
@@ -31,7 +32,7 @@ public class LuckyNumber {
             System.out.println("No has introducido numeros");
         }
         if (estado) {
-            if (ANIO >= anio && MES >= mes && DIA >= dia) {
+            if (ANIO >= anio && MES >= mes && DIA >= dia && ANIO2 <= anio && mes >= 1 && dia >=1) {
                 int resultado = dia + mes + anio;
                 System.out.println(dia + "+" + mes + "+" + anio + " = " + resultado);
                 String anio2 = Integer.toString(resultado);
