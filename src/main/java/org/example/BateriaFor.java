@@ -72,7 +72,8 @@ public class BateriaFor {
         for (int i = cadena.length(); i > 0; i--) {
             System.out.println(cadena.charAt(i-1));
         }
-        
+
+
          */
     }
 }
