@@ -124,6 +124,7 @@ public class BateriaArrays {
         System.out.println(Arrays.toString(array2));
         System.out.println(Arrays.toString(arrayF));
 */
+        /*
         int[] array = {1,3,5,7,9,11};
         System.out.print("Array original: ");
         for (int i = 0; i < array.length; i++) {
@@ -154,6 +155,27 @@ public class BateriaArrays {
         System.out.print("Array resultante: ");
         for (int i = 0; i < array2.length; i++) {
             System.out.print(array2[i] + " ");
+        }
+         */
+        /*
+        String[] array = {"Holaaaaaaaaaaaaaa","Adios","Jorge tonto"};
+        int tamaño = 0;
+        String palabra = "";
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].length() > tamaño){
+                palabra = array[i];
+                tamaño = array[i].length();
+            }
+        }
+        System.out.println(palabra);
+         */
+        String[] array = {"Hola","Adios","Bebesita"};
+        System.out.println("Introduce una letra");
+        char letra = entrada.next().charAt(0);
+        for (int i = 0; i < array.length; i++) {
+            if (letra == array[i].charAt(0)){
+                System.out.println(array[i]);
+            }
         }
     }
 }
