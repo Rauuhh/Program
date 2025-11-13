@@ -56,7 +56,7 @@ public class Ruleta {
         } else if (par.equals(espar)) {
             System.out.println("Has acertado que es par/impar");
         } else if (numero == numeroo && numero == 0) {
-            System.out.println("HAS GANADO Y LOS DEMAS EMAS PIERDEN");
+            System.out.println("HAS GANADO Y LOS DEMAS PIERDEN");
         } else if (numero == numeroo ) {
             System.out.println("Has acertado el numero");
         }else{
