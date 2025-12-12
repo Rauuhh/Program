@@ -90,7 +90,7 @@ public class ZX_Spectrum {
                  conta++;
                  letra1 = "";
                  letra2 = "";
-                 
+
             }
             }
 
